@@ -1,6 +1,7 @@
-create table if not exists greetings (
+create table if not exists messages (
   id serial primary key,
-  message text not null
+  text text not null,
+  created_at timestamptz not null default now()
 );
 
-insert into greetings (message) values ('hello from the database');
+insert into messages (text) values ('hello from the database');
